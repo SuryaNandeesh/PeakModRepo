@@ -190,6 +190,7 @@ public abstract class ModItem : ModType<Item, ModItem>, ILocalizedModType
 	/// <summary>
 	/// Returns whether or not this item can be used. By default returns true.
 	/// <para/> Called on local, server, and remote clients.
+	/// <br/><br/> The item may or not be used after this method is called, so logic in thie method should have no side effects such as consuming items or resources.
 	/// </summary>
 	/// <param name="player">The player using the item.</param>
 	public virtual bool CanUseItem(Player player)

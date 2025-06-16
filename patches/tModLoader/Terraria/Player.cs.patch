@@ -695,6 +695,17 @@
  	public bool desertBoots;
  	public bool eyeSpring;
  	public bool snowman;
+@@ -1148,6 +_,10 @@
+ 	public bool onFire;
+ 	public bool onFire2;
+ 	public bool onFire3;
++	/// <summary>
++	/// When true, the player is unable to use items. Also causes the player to be drawn slightly faded. Used by <see cref="BuffID.Cursed"/> and <see cref="MountID.Drill"/>.
++	/// <br/><br/> Checked wherever items are being attempted to being used. Held projectiles should check this to interrupt their usage if needed.
++	/// </summary>
+ 	public bool noItems;
+ 	public bool cursed;
+ 	public bool hungry;
 @@ -1194,28 +_,86 @@
  	public bool parryDamageBuff;
  	public bool ballistaPanic;

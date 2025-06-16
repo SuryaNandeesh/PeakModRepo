@@ -83,6 +83,7 @@ public abstract class GlobalItem : GlobalType<Item, GlobalItem>
 	/// <summary>
 	/// Returns whether or not any item can be used. Returns true by default. The inability to use a specific item overrides this, so use this to stop an item from being used.
 	/// <para/> Called on local, server, and remote clients.
+	/// <br/><br/> The item may or not be used after this method is called, so logic in thie method should have no side effects such as consuming items or resources.
 	/// </summary>
 	public virtual bool CanUseItem(Item item, Player player)
 	{
