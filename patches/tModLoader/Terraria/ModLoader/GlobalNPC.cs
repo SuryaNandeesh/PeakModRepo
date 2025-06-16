@@ -251,12 +251,11 @@ public abstract class GlobalNPC : GlobalType<NPC, GlobalNPC>
 	}
 
 	/// <summary>
-	/// Allows you to make things happen when an NPC dies (for example, setting ModSystem fields). For client-side effects, such as dust, gore, and sounds, see HitEffect.
-	/// <br/><br/> Boss flags are set after this, so this method is suitable to check if a boss defeated flag is false to detect if this is the victory against that boss.
+	/// Allows you to make things happen when an NPC dies (for example, setting ModSystem fields). For client-side effects, such as dust, gore, and sounds, see <see cref="HitEffect(NPC, NPC.HitInfo)"/>.
+	/// <br/><br/> Boss flags are set after this, so this method is suitable to check if a boss defeated flag is false to detect if this is the first victory against that boss.
 	/// <para/> Called in single player or on the server only.
 	/// <para/> Most item drops should be done via drop rules registered in <see cref="ModifyNPCLoot(NPC, NPCLoot)"/> or <see cref="ModifyGlobalLoot(GlobalLoot)"/>. Some dynamic NPC drops, such as additional hearts, are more suited for OnKill instead. <see href="https://github.com/tModLoader/tModLoader/blob/stable/ExampleMod/Content/NPCs/MinionBoss/MinionBossMinion.cs#L101">MinionBossMinion.cs</see> shows an example of an NPC that drops additional hearts. See <see cref="NPC.lastInteraction"/> and <see href="https://github.com/tModLoader/tModLoader/wiki/Basic-NPC-Drops-and-Loot-1.4#player-who-killed-npc">Player who killed NPC wiki section</see> as well for determining which players attacked or killed this NPC.
 	/// </summary>
-	/// <param name="npc"></param>
 	public virtual void OnKill(NPC npc)
 	{
 	}
