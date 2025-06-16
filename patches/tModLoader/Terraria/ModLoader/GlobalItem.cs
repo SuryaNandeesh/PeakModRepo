@@ -584,6 +584,7 @@ public abstract class GlobalItem : GlobalType<Item, GlobalItem>
 	/// <para/> Return false to keep itemTime at 0.
 	/// <para/> Return null for vanilla behavior.
 	/// <para/> Called on local, server, and remote clients.
+	/// <br/><br/> Note the for right-click actions, this is currently only called on the local client.
 	/// </summary>
 	public virtual bool? UseItem(Item item, Player player) => null;
 

@@ -690,6 +690,7 @@ public abstract class ModItem : ModType<Item, ModItem>, ILocalizedModType
 	/// <para/> Return false to keep itemTime at 0.
 	/// <para/> Return null for vanilla behavior.
 	/// <para/> Called on local, server, and remote clients.
+	/// <br/><br/> Note the for right-click actions, this is currently only called on the local client.
 	/// </summary>
 	/// <param name="player">The player.</param>
 	/// <returns></returns>
