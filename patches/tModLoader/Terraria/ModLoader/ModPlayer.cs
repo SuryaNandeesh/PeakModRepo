@@ -1278,7 +1278,7 @@ public abstract class ModPlayer : ModType<Player, ModPlayer>, IIndexed
 	/// <summary>
 	/// Return false to prevent an item from being used. By default returns true.
 	/// <para/> Called on local, server, and remote clients.
-	/// <br/><br/> The item may or not be used after this method is called, so logic in thie method should have no side effects such as consuming items or resources.
+	/// <br/><br/> The item may or not be used after this method is called, so logic in this method should have no side effects such as consuming items or resources.
 	/// </summary>
 	/// <param name="item">The item the player is attempting to use.</param>
 	public virtual bool CanUseItem(Item item)
