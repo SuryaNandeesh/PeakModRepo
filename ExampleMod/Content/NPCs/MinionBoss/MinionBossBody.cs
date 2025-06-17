@@ -161,6 +161,11 @@ namespace ExampleMod.Content.NPCs.MinionBoss
 			// The following code assigns a music track to the boss in a simple way.
 			if (!Main.dedServ) {
 				Music = MusicLoader.GetMusicSlot(Mod, "Assets/Music/Ropocalypse2");
+
+				// If you would like to play alternate music when the otherworld soundtrack enabled, use this logic.
+				if (!Main.swapMusic == Main.drunkWorld && !Main.remixWorld) {
+					Music = MusicID.OtherworldlyBoss1;
+				}
 			}
 		}
 

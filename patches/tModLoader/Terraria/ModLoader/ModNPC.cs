@@ -69,6 +69,7 @@ public abstract class ModNPC : ModType<NPC, ModNPC>, ILocalizedModType
 
 	/// <summary>
 	/// The ID of the music that plays when this NPC is on or near the screen. Defaults to -1, which means music plays normally.
+	/// <br/><br/> See <see cref="Main.swapMusic"/> for information about playing alternate music when the Otherworld soundtrack is enabled.
 	/// </summary>
 	/// <remarks>
 	/// Note: This property gets ignored if the game would not play music for this NPC by default (i.e. it's not a boss, or it doesn't belong to an invasion)
