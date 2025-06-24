@@ -447,7 +447,7 @@
  	public Chest bank4 = new Chest(bank: true);
  	public BitsByte voidVaultInfo;
  	public float headRotation;
-@@ -836,10 +_,18 @@
+@@ -836,15 +_,26 @@
  	public int fartKartCloudDelay;
  	public const int fartKartCloudDelayMax = 20;
  	public int nonTorch = -1;
@@ -466,6 +466,14 @@
  	public int respawnTimer;
  	public const int respawnTimerMax = 3600;
  	public long lastTimePlayerWasSaved;
+ 	public int attackCD;
+ 	public int potionDelay;
++	/// <summary>
++	/// The <see href="https://terraria.wiki.gg/wiki/Difficulty">player difficulty</see>. Valid values are found in <see cref="PlayerDifficultyID"/>. 
++	/// </summary>
+ 	public byte difficulty;
+ 	public byte wetSlime;
+ 	public HitTile hitTile;
 @@ -853,6 +_,7 @@
  	public int head = -1;
  	public int body = -1;
