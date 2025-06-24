@@ -283,7 +283,7 @@ namespace ExampleMod.Content.NPCs
 		}
 
 		public override void SetChatButtons(ref string button, ref string button2) { // What the chat buttons are when you open up the chat UI
-			button = Language.GetTextValue("LegacyInterface.28");
+			button = Language.GetTextValue("LegacyInterface.28"); // This is the key to the word "Shop"
 			button2 = "Awesomeify";
 			if (Main.LocalPlayer.HasItem(ItemID.HiveBackpack)) {
 				button = "Upgrade " + Lang.GetItemNameValue(ItemID.HiveBackpack);

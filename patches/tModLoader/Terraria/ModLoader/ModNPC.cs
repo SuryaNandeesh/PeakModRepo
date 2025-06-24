@@ -810,7 +810,8 @@ public abstract class ModNPC : ModType<NPC, ModNPC>, ILocalizedModType
 
 	/// <summary>
 	/// Allows you to set the text for the buttons that appear on this NPC's chat window. A parameter left as an empty string will not be included as a button on the chat window.
-	/// <para/> Called on the local client only.
+	/// <br/><br/> The value <c>Language.GetTextValue("LegacyInterface.28")</c> should be used for the "Shop" button.
+	/// <br/><br/> Called on the local client only.
 	/// </summary>
 	/// <param name="button"></param>
 	/// <param name="button2"></param>

@@ -329,7 +329,7 @@ namespace ExampleMod.Content.NPCs
 		}
 
 		public override void SetChatButtons(ref string button, ref string button2) {
-			button = Language.GetTextValue("LegacyInterface.28");
+			button = Language.GetTextValue("LegacyInterface.28"); // This is the key to the word "Shop"
 		}
 
 		public override void OnChatButtonClicked(bool firstButton, ref string shop) {
