@@ -197,6 +197,15 @@
  					switch (type) {
  						case 52:
  						case 62:
+@@ -478,7 +_,7 @@
+ 						case 233:
+ 							if (frameY == 0 && frameX % 54 == 0 && flag)
+ 								AddSpecialPoint(j, i, TileCounterType.MultiTileGrass);
+-							if (frameY == 34 && frameX % 36 == 0 && flag)
++							if (frameY == 36 && frameX % 36 == 0 && flag)
+ 								AddSpecialPoint(j, i, TileCounterType.MultiTileGrass);
+ 							continue;
+ 						case 652:
 @@ -554,6 +_,9 @@
  					}
  
