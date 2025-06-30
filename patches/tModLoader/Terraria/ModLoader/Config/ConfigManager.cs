@@ -416,6 +416,10 @@ public static class ConfigManager
 		return fields.Select(x => new PropertyFieldWrapper(x)).Concat(properties.Select(x => new PropertyFieldWrapper(x)));
 	}
 
+	/// <summary>
+	/// Creates a clone of the provided ModConfig. This clone can be modified independently of the active config.
+	/// <br/><br/> Mods can use this method to create a clone of the active config, then use it to populate a UI. The player can use the UI to make several changes then save them all at once.
+	/// </summary>
 	public static ModConfig GeneratePopulatedClone(ModConfig original)
 	{
 		string json = JsonConvert.SerializeObject(original, ConfigManager.serializerSettings);

@@ -61,6 +61,7 @@ namespace ExampleMod.Common.Configs.ModConfigShowcases
 				ExampleFullscreenUI.instance.RefreshContents();
 			}
 
+			// Only play the sound if this player requested the changes
 			if (player == Main.myPlayer) {
 				if (success) {
 					SoundEngine.PlaySound(SoundID.CoinPickup);

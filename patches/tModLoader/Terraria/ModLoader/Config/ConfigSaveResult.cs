@@ -1,7 +1,7 @@
 ﻿namespace Terraria.ModLoader.Config;
 
 /// <summary>
-/// Contains potential results for <see cref="ModConfig.SaveChanges(ModConfig, System.Action{string, Microsoft.Xna.Framework.Color}, bool)"/>.
+/// Contains potential results for <see cref="ModConfig.SaveChanges(Terraria.ModLoader.Config.ModConfig, System.Action{string, Microsoft.Xna.Framework.Color}, bool, bool)"/>.
 /// </summary>
 public enum ConfigSaveResult
 {

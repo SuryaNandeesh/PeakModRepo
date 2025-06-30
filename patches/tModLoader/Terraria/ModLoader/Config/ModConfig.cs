@@ -70,7 +70,7 @@ public abstract class ModConfig : ILocalizedModType
 		=> true;
 
 	/// <summary>
-	/// Called on multiplayer clients after the server accepts or rejects ServerSide config changes made by a client. Can be used to update UI attempting to manually save changes to a ServerSide config (using <see cref="SaveChanges(ModConfig, Action{string, Color}, bool)"/>). For rejections this is only called on the client who requested the changes. 
+	/// Called on multiplayer clients after the server accepts or rejects ServerSide config changes made by a client. Can be used to update UI attempting to manually save changes to a ServerSide config (using <see cref="SaveChanges(ModConfig, Action{string, Color}, bool, bool)"/>. For rejections this is only called on the client who requested the changes. 
 	/// <br/><br/> <paramref name="player"/> indicates which player requested the changes (see <see cref="Main.myPlayer"/>). 
 	/// <br/><br/> <paramref name="success"/> indicates if the changes were accepted and <paramref name="message"/> is the corresponding message from AcceptClientChanges.
 	/// </summary>
@@ -112,7 +112,8 @@ public abstract class ModConfig : ILocalizedModType
 	/// <br/><br/> <b>Mod code can run this method in-game, but there are some considerations to keep in mind: </b>
 	/// <br/><br/> Calling this method on a <see cref="ConfigScope.ServerSide"/> config from a multiplayer client will result in <see cref="ConfigSaveResult.RequestSentToServer"/> being returned and the actual save logic being performed on the server. <see cref="HandleAcceptClientChangesReply(bool, int, NetworkText)"/> will be called on all clients after the server accepts or denies the changes. Calling this method on the server for a ServerSide config is also supported.
 	/// <br/><br/> Attempting to save changes that would violate <see cref="NeedsReload"/> will fail and <see cref="ConfigSaveResult.NeedsReload"/> will be returned.
-	/// <br/><br/> If there is a chance that the changes won't be accepted, or if you want to provide a UI for the user to make changes without them taking effect immediately, you should use a clone of the ModConfig and pass it in as <paramref name="pendingConfig"/> instead of modifying the active ModConfig directly.
+	/// <br/><br/> If there is a chance that the changes won't be accepted, or if you want to provide a UI for the user to make changes without them taking effect immediately, you should use a clone of the ModConfig and pass it in as <paramref name="pendingConfig"/> instead of modifying the active ModConfig directly. To make a clone, call the <see cref="ConfigManager.GeneratePopulatedClone(ModConfig)"/> method.
+	/// <br/><br/> See <see href="https://github.com/tModLoader/tModLoader/blob/stable/ExampleMod/Common/UI/ExampleFullscreenUI/ExampleFullscreenUI.cs">ExampleFullscreenUI.cs</see> for a complete example of using this method.
 	/// </summary>
 	public ConfigSaveResult SaveChanges(ModConfig pendingConfig = null, Action<string, Color> status = null, bool silent = true, bool broadcast = true)
 	{
@@ -148,8 +149,6 @@ public abstract class ModConfig : ILocalizedModType
 				requestChanges.Write(broadcast);
 				requestChanges.Write(json);
 				requestChanges.Send();
-
-				//IngameFancyUI.Close();
 
 				if (pendingIsActive)
 					ConfigManager.Load(modConfig);
@@ -191,15 +190,6 @@ public abstract class ModConfig : ILocalizedModType
 				}
 			}
 		}
-
-		/*
-		if (ConfigManager.ModNeedsReload(modConfig.mod)) {
-			Main.menuMode = Interface.reloadModsID;
-		}
-		else {
-			DoMenuModeState();
-		}
-		*/
 
 		status?.Invoke(Language.GetTextValue("tModLoader.ModConfigConfigSaved"), Color.Green);
 
