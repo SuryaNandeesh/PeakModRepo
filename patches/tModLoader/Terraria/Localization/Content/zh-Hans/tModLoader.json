@@ -553,9 +553,9 @@
 		"DMTutorialWelcome": "欢迎使用tModLoader来制作模组。 请查看Wiki以获取更多信息和教程。",
 		"DMTutorial": "教程",
 		"DMUpdateScripts": "更新脚本",
-
 		"DMScriptsRequireRestart": "启动脚本已更新，需重新启动tModLoader。",
 		"DMUpdateMonoToDownloadModCompile": "运行最新版本的Mono时，可以从GitHub上下载额外库。",
+
 		// Extract Mod
 		"ExtractErrorWhileExtractingMod": "提取时发生错误 {0}",
 		"ExtractHideCodeMessage": "该模组的作者选择对[tModReader]隐藏其源代码。",
