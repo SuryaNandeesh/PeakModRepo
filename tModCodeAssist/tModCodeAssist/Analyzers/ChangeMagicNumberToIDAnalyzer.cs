@@ -137,6 +137,7 @@ public sealed class ChangeMagicNumberToIDAnalyzer() : AbstractDiagnosticAnalyzer
 		AddBinding("Terraria.Main", "netMode", (ctx) => new FieldBinding(ctx), nameof(NetmodeID), typeof(NetmodeID).FullName, NetmodeID.Search);
 
 		AddBinding("Terraria.ModLoader.ModBlockType", "DustType", (ctx) => new FieldBinding(ctx), nameof(DustID), typeof(DustID).FullName, DustID.Search);
+		AddBinding("Terraria.ModLoader.ModDust", "UpdateType", (ctx) => new FieldBinding(ctx), nameof(DustID), typeof(DustID).FullName, DustID.Search);
 
 		AddBinding("Terraria.Item", "CloneDefaults", (ctx) => new MethodParameterBinding(ctx, 0), nameof(ItemID), typeof(ItemID).FullName, ItemID.Search);
 		AddBinding("Terraria.NetMessage", "SendData", (ctx) => new MethodParameterBinding(ctx, 0), nameof(MessageID), typeof(MessageID).FullName, MessageID.Search);
