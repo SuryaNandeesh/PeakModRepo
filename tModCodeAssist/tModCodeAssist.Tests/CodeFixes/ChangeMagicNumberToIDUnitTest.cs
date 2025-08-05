@@ -83,6 +83,8 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			Projectile.NewProjectile(Main.LocalPlayer.GetSource_FromThis(), Main.LocalPlayer.Top, new Vector2(0, -Main.rand.NextFloat(2f, 4f)).RotatedByRandom(0.3f), [|60|], 0, 0, Main.myPlayer);
 			new Item().CloneDefaults([|5450|]);
 			Dust.NewDust(Vector2.Zero, 1, 2, [|3|], 4, 5, 6, Color.Red, 7);
+			Dust.NewDustDirect(Vector2.Zero, 1, 2, [|75|], 4, 5);
+			Dust.NewDustPerfect(Vector2.Zero, [|76|]);
 			""",
 			"""
 			using Microsoft.Xna.Framework;
@@ -96,6 +98,8 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			Projectile.NewProjectile(Main.LocalPlayer.GetSource_FromThis(), Main.LocalPlayer.Top, new Vector2(0, -Main.rand.NextFloat(2f, 4f)).RotatedByRandom(0.3f), ProjectileID.MythrilDrill, 0, 0, Main.myPlayer);
 			new Item().CloneDefaults(ItemID.RainbowMossBlockWall);
 			Dust.NewDust(Vector2.Zero, 1, 2, DustID.GrassBlades, 4, 5, 6, Color.Red, 7);
+			Dust.NewDustDirect(Vector2.Zero, 1, 2, DustID.CursedTorch, 4, 5);
+			Dust.NewDustPerfect(Vector2.Zero, DustID.Snow);
 			""");
 	}
 

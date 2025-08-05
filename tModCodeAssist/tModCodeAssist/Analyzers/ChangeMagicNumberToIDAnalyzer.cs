@@ -143,6 +143,7 @@ public sealed class ChangeMagicNumberToIDAnalyzer() : AbstractDiagnosticAnalyzer
 		AddBinding("Terraria.NetMessage", "SendData", (ctx) => new MethodParameterBinding(ctx, 0), nameof(MessageID), typeof(MessageID).FullName, MessageID.Search);
 		AddBinding("Terraria.Dust", "NewDust", (ctx) => new MethodParameterBinding(ctx, 3), nameof(DustID), typeof(DustID).FullName, DustID.Search);
 		AddBinding("Terraria.Dust", "NewDustDirect", (ctx) => new MethodParameterBinding(ctx, 3), nameof(DustID), typeof(DustID).FullName, DustID.Search);
+		AddBinding("Terraria.Dust", "NewDustPerfect", (ctx) => new MethodParameterBinding(ctx, 1), nameof(DustID), typeof(DustID).FullName, DustID.Search);
 
 		AddBinding("Terraria.Recipe", "Create", (ctx) => new MethodParameterBinding(ctx, 0), nameof(ItemID), typeof(ItemID).FullName, ItemID.Search);
 		AddBinding("Terraria.Recipe", "AddTile", (ctx) => new MethodParameterBinding(ctx, 0), nameof(TileID), typeof(TileID).FullName, TileID.Search);
