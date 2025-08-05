@@ -135,9 +135,15 @@ public sealed class ChangeMagicNumberToIDAnalyzer() : AbstractDiagnosticAnalyzer
 		AddBinding("Terraria.Item", "rare", (ctx) => new FieldBinding(ctx), nameof(ItemRarityID), typeof(ItemRarityID).FullName, ItemRarityID.Search);
 		AddBinding("Terraria.NPC", "type", (ctx) => new FieldBinding(ctx), nameof(NPCID), typeof(NPCID).FullName, NPCID.Search);
 		AddBinding("Terraria.Main", "netMode", (ctx) => new FieldBinding(ctx), nameof(NetmodeID), typeof(NetmodeID).FullName, NetmodeID.Search);
+		AddBinding("Terraria.Projectile", "type", (ctx) => new FieldBinding(ctx), nameof(ProjectileID), typeof(ProjectileID).FullName, ProjectileID.Search);
 
 		AddBinding("Terraria.ModLoader.ModBlockType", "DustType", (ctx) => new FieldBinding(ctx), nameof(DustID), typeof(DustID).FullName, DustID.Search);
 		AddBinding("Terraria.ModLoader.ModDust", "UpdateType", (ctx) => new FieldBinding(ctx), nameof(DustID), typeof(DustID).FullName, DustID.Search);
+		AddBinding("Terraria.Tile", "TileType", (ctx) => new FieldBinding(ctx), nameof(TileID), typeof(TileID).FullName, TileID.Search);
+		AddBinding("Terraria.Tile", "WallType", (ctx) => new FieldBinding(ctx), nameof(WallID), typeof(WallID).FullName, WallID.Search);
+		//AddBinding("Terraria.Tile", "TileColor", (ctx) => new FieldBinding(ctx), nameof(PaintID), typeof(PaintID).FullName, PaintID.Search);
+		//AddBinding("Terraria.Tile", "WallColor", (ctx) => new FieldBinding(ctx), nameof(PaintID), typeof(PaintID).FullName, PaintID.Search);
+		//AddBinding("Terraria.Tile", "LiquidType", (ctx) => new FieldBinding(ctx), nameof(LiquidID), typeof(LiquidID).FullName, LiquidID.Search);
 
 		AddBinding("Terraria.Item", "CloneDefaults", (ctx) => new MethodParameterBinding(ctx, 0), nameof(ItemID), typeof(ItemID).FullName, ItemID.Search);
 		AddBinding("Terraria.NetMessage", "SendData", (ctx) => new MethodParameterBinding(ctx, 0), nameof(MessageID), typeof(MessageID).FullName, MessageID.Search);

@@ -58,12 +58,14 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			using Terraria;
 
 			_ = new Item().type == [|1|];
+			_ = new Projectile().type == [|444|];
 			""",
 			"""
 			using Terraria;
 			using Terraria.ID;
 			
 			_ = new Item().type == ItemID.IronPickaxe;
+			_ = new Projectile().type == ProjectileID.Xenopopper;
 			""");
 	}
 
@@ -85,6 +87,8 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			Dust.NewDust(Vector2.Zero, 1, 2, [|3|], 4, 5, 6, Color.Red, 7);
 			Dust.NewDustDirect(Vector2.Zero, 1, 2, [|75|], 4, 5);
 			Dust.NewDustPerfect(Vector2.Zero, [|76|]);
+			Main.tile[10, 20].TileType = [|490|];
+			Main.tile[20, 30].WallType = [|276|];
 			""",
 			"""
 			using Microsoft.Xna.Framework;
@@ -100,6 +104,8 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			Dust.NewDust(Vector2.Zero, 1, 2, DustID.GrassBlades, 4, 5, 6, Color.Red, 7);
 			Dust.NewDustDirect(Vector2.Zero, 1, 2, DustID.CursedTorch, 4, 5);
 			Dust.NewDustPerfect(Vector2.Zero, DustID.Snow);
+			Main.tile[10, 20].TileType = TileID.WeatherVane;
+			Main.tile[20, 30].WallType = WallID.Corruption1Echo;
 			""");
 	}
 
