@@ -28,6 +28,9 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			modTile.DustType = [|1|];
 			Terraria.ModLoader.ModWall modWall = null;
 			modWall.DustType = [|2|];
+
+			Main.tile[10, 20].TileType = [|490|];
+			Main.tile[20, 30].WallType = [|276|];
 			""",
 			"""
 			using Terraria;
@@ -47,6 +50,9 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			modTile.DustType = DustID.Stone;
 			Terraria.ModLoader.ModWall modWall = null;
 			modWall.DustType = DustID.Grass;
+
+			Main.tile[10, 20].TileType = TileID.WeatherVane;
+			Main.tile[20, 30].WallType = WallID.Corruption1Echo;
 			""");
 	}
 
@@ -87,8 +93,6 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			Dust.NewDust(Vector2.Zero, 1, 2, [|3|], 4, 5, 6, Color.Red, 7);
 			Dust.NewDustDirect(Vector2.Zero, 1, 2, [|75|], 4, 5);
 			Dust.NewDustPerfect(Vector2.Zero, [|76|]);
-			Main.tile[10, 20].TileType = [|490|];
-			Main.tile[20, 30].WallType = [|276|];
 			""",
 			"""
 			using Microsoft.Xna.Framework;
@@ -104,8 +108,6 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			Dust.NewDust(Vector2.Zero, 1, 2, DustID.GrassBlades, 4, 5, 6, Color.Red, 7);
 			Dust.NewDustDirect(Vector2.Zero, 1, 2, DustID.CursedTorch, 4, 5);
 			Dust.NewDustPerfect(Vector2.Zero, DustID.Snow);
-			Main.tile[10, 20].TileType = TileID.WeatherVane;
-			Main.tile[20, 30].WallType = WallID.Corruption1Echo;
 			""");
 	}
 
