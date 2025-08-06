@@ -225,6 +225,42 @@ public sealed class ChangeMagicNumberToIDAnalyzer() : AbstractDiagnosticAnalyzer
 			}
 
 		}, SyntaxKind.CaseSwitchLabel);
+
+		/*
+			ItemID.Sets.StaffMinionSlotsRequired[1309] = 2f;
+				=>
+			ItemID.Sets.StaffMinionSlotsRequired[ItemID.SlimeStaff] = 2f;
+		*/
+		ctx.RegisterSyntaxNodeAction(ctx => {
+			var node = (ElementAccessExpressionSyntax)ctx.Node;
+
+			var leftSymbolInfo = ctx.SemanticModel.GetSymbolInfo(node.Expression, ctx.CancellationToken);
+			if (leftSymbolInfo.Symbol is not { } leftSymbol || !MagicNumberBindings.TryGetBinding(leftSymbol, out var binding))
+				return;
+
+			if (node.ArgumentList is not {
+				RawKind: (int)SyntaxKind.BracketedArgumentList,
+				Arguments: [{ Expression: var indexExpression }] // is this doing the count check?
+			})
+				return;
+
+			if (indexExpression.IsKind(SyntaxKind.NumericLiteralExpression)) {
+				var constant = ctx.SemanticModel.GetConstantValue(indexExpression, ctx.CancellationToken);
+				if (!constant.HasValue)
+					return;
+
+				int id = Convert.ToInt32(constant.Value);
+
+				ReportDiagnostic(ctx.ReportDiagnostic, indexExpression, binding, id);
+			}
+			else if (ctx.SemanticModel.GetSymbolInfo(indexExpression, ctx.CancellationToken) is { Symbol: var argumentSymbol } && argumentSymbol is IFieldSymbol { IsConst: true }) {
+				var displayString = argumentSymbol.ContainingType.ToDisplayString();
+				if (!displayString.StartsWith("Terraria.") || binding.FullIdType.Equals(displayString, StringComparison.InvariantCulture))
+					return;
+
+				ReportBadTypeDiagnostic(ctx.ReportDiagnostic, indexExpression, binding);
+			}
+		}, SyntaxKind.ElementAccessExpression);
 	}
 
 	private void ReportDiagnostic(Action<Diagnostic> report, SyntaxNode literalNode, MagicNumberBindings.Binding binding, int id)
