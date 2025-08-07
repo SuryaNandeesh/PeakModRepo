@@ -19,10 +19,12 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			item.type = [|42|];
 			item.useStyle = [|4|];
 			item.shoot = [|42|];
+			item.rare = [|-1|];
 			item.rare = [|4|];
 			item.useTime = 69;
 			var player = new Player();
 			player.cursorItemIconID = [|327|];
+			player.cursorItemIconID = -1;
 
 			Terraria.ModLoader.ModTile modTile = null;
 			modTile.DustType = [|1|];
@@ -45,10 +47,12 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			item.type = ItemID.Shuriken;
 			item.useStyle = ItemUseStyleID.HoldUp;
 			item.shoot = ProjectileID.SandBallGun;
+			item.rare = ItemRarityID.Gray;
 			item.rare = ItemRarityID.LightRed;
 			item.useTime = 69;
 			var player = new Player();
 			player.cursorItemIconID = ItemID.GoldenKey;
+			player.cursorItemIconID = -1;
 
 			Terraria.ModLoader.ModTile modTile = null;
 			modTile.DustType = DustID.Stone;

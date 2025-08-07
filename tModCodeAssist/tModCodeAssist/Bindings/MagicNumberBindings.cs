@@ -3,7 +3,6 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
-using System.Text;
 using Microsoft.CodeAnalysis;
 using ReLogic.Reflection;
 using Terraria.ID;
@@ -19,12 +18,14 @@ public static class MagicNumberBindings
 			in string MemberName,
 			in string ShortIdType,
 			in string FullIdType,
-			in IdDictionary Search
+			in IdDictionary Search,
+			in bool AllowNegativeIDs = false
 		);
 
 		public string ShortIdType => context.ShortIdType;
 		public string FullIdType => context.FullIdType;
 		public IdDictionary Search => context.Search;
+		public bool AllowNegativeIDs => context.AllowNegativeIDs;
 	}
 	private sealed class FieldBinding(Binding.CreationContext context) : Binding(context)
 	{
@@ -65,7 +66,7 @@ public static class MagicNumberBindings
 			AddBinding<ItemID>("Terraria.Player", "cursorItemIconID", (ctx) => new FieldBinding(ctx));
 			AddBinding<ProjectileID>("Terraria.Item", "shoot", (ctx) => new FieldBinding(ctx));
 			AddBinding<ItemUseStyleID>("Terraria.Item", "useStyle", (ctx) => new FieldBinding(ctx));
-			AddBinding(typeof(ItemRarityID), "Terraria.Item", "rare", (ctx) => new FieldBinding(ctx));
+			AddBinding(typeof(ItemRarityID), "Terraria.Item", "rare", (ctx) => new FieldBinding(ctx), allowNegativeIDs: true);
 			AddBinding<NPCID>("Terraria.NPC", "type", (ctx) => new FieldBinding(ctx));
 			AddBinding(typeof(NetmodeID), "Terraria.Main", "netMode", (ctx) => new FieldBinding(ctx));
 			AddBinding<ProjectileID>("Terraria.Projectile", "type", (ctx) => new FieldBinding(ctx));
@@ -101,12 +102,12 @@ public static class MagicNumberBindings
 		}
 	}
 
-	private static void AddBinding<T>(string owningClassName, string memberName, Func<Binding.CreationContext, Binding> func)
+	private static void AddBinding<T>(string owningClassName, string memberName, Func<Binding.CreationContext, Binding> func, bool allowNegativeIDs = false)
 	{
-		AddBinding(typeof(T), owningClassName, memberName, func);
+		AddBinding(typeof(T), owningClassName, memberName, func, allowNegativeIDs: allowNegativeIDs);
 	}
 
-	private static void AddBinding(Type idClass, string owningClassName, string memberName, Func<Binding.CreationContext, Binding> func, Type idType = null)
+	private static void AddBinding(Type idClass, string owningClassName, string memberName, Func<Binding.CreationContext, Binding> func, Type idType = null, bool allowNegativeIDs = false)
 	{
 		if (!searchCache.TryGetValue(idClass, out var search)) {
 			var field = idClass.GetField("Search", (BindingFlags)(-1));
@@ -118,11 +119,12 @@ public static class MagicNumberBindings
 				Debug.Assert(idType != null, "idType must be provided for classes without a Search IdDictionary");
 				search = IdDictionary.Create(idClass, idType);
 			}
+
 			Debug.Assert(search != null);
 			searchCache[idClass] = search;
 		}
 
-		var context = new Binding.CreationContext(owningClassName, memberName, idClass.Name, idClass.FullName, search);
+		var context = new Binding.CreationContext(owningClassName, memberName, idClass.Name, idClass.FullName, search, AllowNegativeIDs: allowNegativeIDs);
 		var binding = func(context);
 
 		if (bindingByMemberByOwningClass.TryGetValue(owningClassName, out var bindingByMember)) {
@@ -146,6 +148,7 @@ public static class MagicNumberBindings
 			if (bindingByMember.TryGetValue(fieldSymbol.MetadataName, out binding)) {
 				return true;
 			}
+
 			if (bindingByMember.TryGetValue("*", out binding)) {
 				return true;
 			}
