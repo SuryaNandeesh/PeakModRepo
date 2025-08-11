@@ -115,6 +115,33 @@ namespace tModCodeAssist {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Errors when class name or namespace collides with an existing Terraria type name.
+        /// </summary>
+        internal static string CommonCollisionNameDescription {
+            get {
+                return ResourceManager.GetString("CommonCollisionNameDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Class name or namespace &quot;{0}&quot; from &quot;{1}&quot; collides with an existing Terraria type.
+        /// </summary>
+        internal static string CommonCollisionNameMessageFormat {
+            get {
+                return ResourceManager.GetString("CommonCollisionNameMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Common type collision name.
+        /// </summary>
+        internal static string CommonCollisionNameTitle {
+            get {
+                return ResourceManager.GetString("CommonCollisionNameTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Simplifies local (client-side) player access.
         /// </summary>
         internal static string SimplifyLocalPlayerDescription {
