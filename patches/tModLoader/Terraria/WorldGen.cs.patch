@@ -2556,6 +2556,14 @@
  		for (int i = 0; i < num; i++) {
  			KillTile_MakeTileDust(x, y, tileSafely);
  		}
+@@ -44620,6 +_,7 @@
+ 
+ 	private static void ReplaceTIle_DoActualReplacement(ushort targetType, int targetStyle, int topLeftX, int topLeftY, Tile t)
+ 	{
++		int replacedTileType = t.TileType;
+ 		if (TileID.Sets.BasicChest[targetType]) {
+ 			if (IsChestRigged(topLeftX, topLeftY) && Main.netMode != 1) {
+ 				Wiring.HitSwitch(topLeftX, topLeftY);
 @@ -44631,12 +_,13 @@
  		else if (TileID.Sets.BasicDresser[targetType]) {
  			ReplaceTile_DoActualReplacement_Area(targetType, targetStyle, topLeftX, topLeftY, 3, 2);
@@ -2567,7 +2575,7 @@
  		else {
  			ReplaceTile_DoActualReplacement_Single(targetType, targetStyle, topLeftX, topLeftY, t);
  		}
-+		TileLoader.ReplaceTile(topLeftX, topLeftY, t.TileType, targetType, targetStyle);
++		TileLoader.ReplaceTile(topLeftX, topLeftY, replacedTileType, targetType, targetStyle);
  	}
  
  	private static void ReplaceTile_DoActualReplacement_Single(ushort targetType, int targetStyle, int topLeftX, int topLeftY, Tile t)
