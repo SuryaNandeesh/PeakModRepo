@@ -24,7 +24,7 @@
  {
  	private string _nameOverride;
  	public const int luckPotionDuration1 = 18000;
-@@ -37,78 +_,457 @@
+@@ -37,78 +_,473 @@
  	private readonly int eclipsePrice = sellPrice(0, 7, 50);
  	private readonly int eclipsePostPlanteraPrice = sellPrice(0, 10);
  	private readonly int eclipseMothronPrice = sellPrice(0, 12, 50);
@@ -364,7 +364,8 @@
 +
 +	/// <summary>
 +	/// Additional tile range provided by this tool or tile. Copper Pickaxe has a value of -1, reducing the range. Chain uses 3 to allow the tile to be placed from farther away than normal tiles.
-+	/// <br/> Defaults to 0.
++	/// <br/><br/> For accessory effects, modify <see cref="Player.tileRangeX"/> or <see cref="Player.blockRange"/> in <see cref="ModItem.UpdateAccessory(Player, bool)"/> instead.
++	/// <br/><br/> Defaults to 0.
 +	/// </summary>
  	public int tileBoost;
 +
@@ -479,29 +480,60 @@
 +	/// <br/> Defaults to 0.
 +	/// </summary>
  	public int defense;
++	/// <summary>
++	/// The head equipment slot for this item. When this item is equipped, <see cref="Player.head"/> will be set to this value and the corresponding equipment texture will be displayed on the player.
++	/// <br/><br/> For <see cref="ModItem"/>, this is set automatically using <see cref="AutoloadEquip"/> with <see cref="EquipType.Head"/>.
++	/// <br/><br/> Defaults to -1.
++	/// </summary>
  	public int headSlot = -1;
++	/// <summary>
++	/// The body equipment slot for this item. When this item is equipped, <see cref="Player.body"/> will be set to this value and the corresponding equipment texture will be displayed on the player.
++	/// <br/><br/> For <see cref="ModItem"/>, this is set automatically using <see cref="AutoloadEquip"/> with <see cref="EquipType.Body"/>.
++	/// <br/><br/> Defaults to -1.
++	/// </summary>
  	public int bodySlot = -1;
++	/// <summary>
++	/// The legs equipment slot for this item. When this item is equipped, <see cref="Player.legs"/> will be set to this value and the corresponding equipment texture will be displayed on the player.
++	/// <br/><br/> For <see cref="ModItem"/>, this is set automatically using <see cref="AutoloadEquip"/> with <see cref="EquipType.Legs"/>.
++	/// <br/><br/> Defaults to -1.
++	/// </summary>
  	public int legSlot = -1;
 +	/* sbyte -> int
  	public sbyte handOnSlot = -1;
  	public sbyte handOffSlot = -1;
  	public sbyte backSlot = -1;
-@@ -121,49 +_,255 @@
+@@ -121,49 +_,271 @@
  	public sbyte faceSlot = -1;
  	public sbyte balloonSlot = -1;
  	public sbyte beardSlot = -1;
 +	*/
++	/// <summary>
++	/// The equipment slot for this item. When this item is equipped, the corresponding <see cref="Player"/> field will be set to this value (for example, item.faceSlot will set player.face) and the corresponding equipment texture will be displayed on the player.
++	/// <br/><br/> For <see cref="ModItem"/>, this is set automatically using <see cref="AutoloadEquip"/> with the corresponding <see cref="EquipType"/> value.
++	/// <br/><br/> Defaults to -1, indicating that this item does not have a specific equipment texture for this slot.
++	/// </summary>
 +	public int handOnSlot = -1;
++	/// <inheritdoc cref="handOnSlot"/>
 +	public int handOffSlot = -1;
++	/// <inheritdoc cref="handOnSlot"/>
 +	public int backSlot = -1;
++	/// <inheritdoc cref="handOnSlot"/>
 +	public int frontSlot = -1;
++	/// <inheritdoc cref="handOnSlot"/>
 +	public int shoeSlot = -1;
++	/// <inheritdoc cref="handOnSlot"/>
 +	public int waistSlot = -1;
++	/// <inheritdoc cref="handOnSlot"/>
 +	public int wingSlot = -1;
++	/// <inheritdoc cref="handOnSlot"/>
 +	public int shieldSlot = -1;
++	/// <inheritdoc cref="handOnSlot"/>
 +	public int neckSlot = -1;
++	/// <inheritdoc cref="handOnSlot"/>
 +	public int faceSlot = -1;
++	/// <inheritdoc cref="handOnSlot"/>
 +	public int balloonSlot = -1;
++	/// <inheritdoc cref="handOnSlot"/>
 +	public int beardSlot = -1;
  	public int stringColor;
  	public ItemTooltip ToolTip;
