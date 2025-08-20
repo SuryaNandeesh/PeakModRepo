@@ -23,8 +23,8 @@ public partial class UIList : UIElement, IEnumerable<UIElement>, IEnumerable
 	/// </summary>
 	public virtual void AddRange(IEnumerable<UIElement> items)
 	{
+		_items.AddRange(items);
 		foreach (var item in items) {
-			_items.Add(item);
 			_innerList.Append(item);
 		}
 
