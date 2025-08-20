@@ -23,7 +23,7 @@
  	private float _innerListHeight;
  	public float ListPadding = 5f;
  	public Action<List<UIElement>> ManualSortMethod;
-@@ -60,6 +_,21 @@
+@@ -60,6 +_,25 @@
  		}
  	}
  
@@ -42,6 +42,10 @@
 +		}
 +	}
 +
++	/// <summary>
++	/// Adds the element to this list. Note that this will sort and recalculate the list each time it is called, which can be quite slow, so use <see cref="AddRange(IEnumerable{UIElement})"/> instead if adding multiple elements to this list.
++	/// <br/><br/> Also see the <see cref="UIList"/> documentation for notes about how elements are sorted, they are not sorted in the order they are added by default.
++	/// </summary>
  	public virtual void Add(UIElement item)
  	{
  		_items.Add(item);
