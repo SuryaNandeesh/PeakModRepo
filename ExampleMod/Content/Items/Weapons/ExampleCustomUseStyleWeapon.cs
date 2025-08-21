@@ -34,7 +34,9 @@ namespace ExampleMod.Content.Items.Weapons
 			Item.rare = ItemRarityID.Green;
 			Item.autoReuse = true;
 			Item.UseSound = SoundID.Item1;
+		}
 
+		public override void SetStaticDefaults() {
 			// This controls how far out the weapon should be held from the hand. This weapon uses 0 (so we don't actually need to set it) but the logic in ExampleCustomUseStyleGlobalItem works for other values as well. We can set it here or in the CreateIntSet method, both work.
 			//ExampleCustomUseStyleItemSets.HandOffsets[Type] = 0;
 		}
@@ -106,8 +108,11 @@ namespace ExampleMod.Content.Items.Weapons
 			// Cutlass will now use out custom use style, making it swing up instead of the normal swing.
 			if (item.type == ItemID.Cutlass) {
 				item.useStyle = ExampleCustomUseStyle;
-				//ExampleCustomUseStyleItemSets.HandOffsets[item.type] = -6; // Alternate approach to setting HandOffsets
 			}
+		}
+
+		public override void SetStaticDefaults() {
+			//ExampleCustomUseStyleItemSets.HandOffsets[ItemID.Cutlass] = -6; // Alternate approach to setting HandOffsets
 		}
 
 		// We use the UseStyle method to determine where the item will be drawn during the weapon animation
