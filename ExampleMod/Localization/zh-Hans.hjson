@@ -1208,6 +1208,11 @@ Mods: {
 				// DisplayName: Example Sentry Item
 				// Tooltip: Summons an example sentry to fight for you
 			}
+
+			ExampleHeldProjectileWeapon: {
+				// DisplayName: Example Held Projectile Weapon
+				// Tooltip: ""
+			}
 		}
 
 		# Projectile display names mainly show in chat when a player dies from it.
@@ -1258,6 +1263,7 @@ Mods: {
 			// ExampleInteractableProjectile.DisplayName: Example Interactable Projectile
 			// ExampleSentry.DisplayName: Example Sentry
 			// ExampleSentryShot.DisplayName: Example Sentry Shot
+			// ExampleHeldProjectileWeaponProjectile.DisplayName: Example Held Projectile Weapon Projectile
 		}
 
 		Buffs: {
