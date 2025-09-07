@@ -105,6 +105,8 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			Dust.NewDust(Vector2.Zero, 1, 2, [|3|], 4, 5, 6, Color.Red, 7);
 			Dust.NewDustDirect(Vector2.Zero, 1, 2, [|75|], 4, 5);
 			Dust.NewDustPerfect(Vector2.Zero, [|76|]);
+			new Player().AddBuff([|20|], 120);
+			new NPC().AddBuff([|24|], 120, true);
 			""",
 			"""
 			using Microsoft.Xna.Framework;
@@ -120,6 +122,8 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			Dust.NewDust(Vector2.Zero, 1, 2, DustID.GrassBlades, 4, 5, 6, Color.Red, 7);
 			Dust.NewDustDirect(Vector2.Zero, 1, 2, DustID.CursedTorch, 4, 5);
 			Dust.NewDustPerfect(Vector2.Zero, DustID.Snow);
+			new Player().AddBuff(BuffID.Poisoned, 120);
+			new NPC().AddBuff(BuffID.OnFire, 120, true);
 			""");
 	}
 

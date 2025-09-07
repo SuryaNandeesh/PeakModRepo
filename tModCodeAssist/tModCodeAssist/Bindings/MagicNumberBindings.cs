@@ -92,6 +92,8 @@ public static class MagicNumberBindings
 			AddBinding<ProjectileID>("Terraria.Projectile", "NewProjectile(Terraria.DataStructures.IEntitySource, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, int, int, float, int, float, float, float)", (ctx) => new MethodParameterBinding(ctx, 3));
 			AddBinding<ProjectileID>("Terraria.Projectile", "NewProjectile(Terraria.DataStructures.IEntitySource, float, float, float, float, int, int, float, int, float, float, float)", (ctx) => new MethodParameterBinding(ctx, 5));
 			AddBinding<ProjectileID>("Terraria.Projectile", "NewProjectileDirect(Terraria.DataStructures.IEntitySource, Microsoft.Xna.Framework.Vector2, Microsoft.Xna.Framework.Vector2, int, int, float, int, float, float, float)", (ctx) => new MethodParameterBinding(ctx, 3));
+			AddBinding<BuffID>("Terraria.Player", "AddBuff", (ctx) => new MethodParameterBinding(ctx, 0));
+			AddBinding<BuffID>("Terraria.NPC", "AddBuff", (ctx) => new MethodParameterBinding(ctx, 0));
 
 			AddBinding<ItemID>("Terraria.ID.ItemID.Sets", "*", (ctx) => new FieldBinding(ctx));
 			AddBinding<NPCID>("Terraria.ID.NPCID.Sets", "*", (ctx) => new FieldBinding(ctx));
