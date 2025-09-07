@@ -37,6 +37,19 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			tile.TileColor = [|1|];
 			tile.WallColor = [|1|];
 			tile.LiquidType = [|1|];
+
+			var projectile = new Projectile();
+			projectile.aiStyle = [|1|];
+
+			Terraria.ModLoader.ModProjectile modProjectile = null;
+			modProjectile.AIType = [|93|];
+
+			var npc = new NPC();
+			npc.aiStyle = [|18|];
+
+			Terraria.ModLoader.ModNPC modNPC = null;
+			modNPC.AIType = [|103|];
+			modNPC.AnimationType = [|64|];
 			""",
 			"""
 			using Terraria;
@@ -65,6 +78,19 @@ public sealed class ChangeMagicNumberToIDUnitTest
 			tile.TileColor = PaintID.RedPaint;
 			tile.WallColor = PaintID.RedPaint;
 			tile.LiquidType = LiquidID.Lava;
+			
+			var projectile = new Projectile();
+			projectile.aiStyle = ProjAIStyleID.Arrow;
+
+			Terraria.ModLoader.ModProjectile modProjectile = null;
+			modProjectile.AIType = ProjectileID.MagicDagger;
+			
+			var npc = new NPC();
+			npc.aiStyle = NPCAIStyleID.Jellyfish;
+			
+			Terraria.ModLoader.ModNPC modNPC = null;
+			modNPC.AIType = NPCID.GreenJellyfish;
+			modNPC.AnimationType = NPCID.PinkJellyfish;
 			""");
 	}
 
