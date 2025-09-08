@@ -1213,6 +1213,16 @@ Mods: {
 				// DisplayName: Example Held Projectile Weapon
 				// Tooltip: ""
 			}
+
+			SimpleAccessory: {
+				// DisplayName: Simple Accessory
+				// Tooltip: ""
+			}
+
+			ExampleCutTile: {
+				// DisplayName: Fragile Boulder Trap
+				// Tooltip: ""
+			}
 		}
 
 		# Projectile display names mainly show in chat when a player dies from it.
