@@ -3016,6 +3016,14 @@
  		if (diff == 1)
  			baseColor = new Microsoft.Xna.Framework.Color((byte)((float)(int)mcColor.R * num2), (byte)((float)(int)mcColor.G * num2), (byte)((float)(int)mcColor.B * num2), mouseTextColor);
  
+@@ -16095,6 +_,7 @@
+ 			hoverItem.knockBack *= 1f + (1f - player[myPlayer].stealth) * 0.5f;
+ 
+ 		int num2 = 30;
++		num2 += hoverItem.ToolTip?.Lines ?? 0; // Easy fix to #4772. A full fix would require rewrites of hooks.
+ 		int numLines = 1;
+ 		string[] array = new string[num2];
+ 		bool[] array2 = new bool[num2];
 @@ -16104,7 +_,10 @@
  			array3[i] = false;
  		}
