@@ -33,10 +33,10 @@ namespace ExampleMod.Common.Players
 
 		// Here we use a "hook" to actually let our FrostBurnSummon status take effect. This hook is called anytime a player owned projectile hits an enemy.
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone) {
-			// FrostBurnSummon, as its name suggests, applies frostBurn to enemy NPC but only for Summon projectiles.
-			// In this if statement we check several conditions. We first check to make sure the projectile that hit the NPC is either a minion projectile or a projectile that minions shoot.
+			// FrostBurnSummon, as its name suggests, applies frostBurn to enemy NPC but only for Summon projectiles (minions, sentries, minion shots, and sentry shots).
+			// In this if statement we check several conditions. We first check to make sure the projectile that hit the NPC is either a minion, sentry, minion shot, or sentry shot projectile.
 			// We then check that FrostBurnSummon is set to true. The last check for not noEnchantments is because some projectiles don't allow enchantments and we want to honor that restriction.
-			if ((proj.minion || ProjectileID.Sets.MinionShot[proj.type]) && FrostBurnSummon && !proj.noEnchantments) {
+			if (proj.IsMinionOrSentryRelated && FrostBurnSummon && !proj.noEnchantments) {
 				// If all those checks pass, we apply FrostBurn for some random duration.
 				target.AddBuff(BuffID.Frostburn, 60 * Main.rand.Next(3, 6));
 			}

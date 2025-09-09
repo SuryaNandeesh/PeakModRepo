@@ -1216,7 +1216,7 @@ Mods: {
 
 			SimpleAccessory: {
 				DisplayName: Simple Accessory
-				Tooltip: ""
+				Tooltip: Minion and sentry attacks cause frostburn
 			}
 
 			ExampleCutTile: {
