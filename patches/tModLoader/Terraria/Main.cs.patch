@@ -6485,8 +6485,13 @@
  			if (IsLiquidStyleWater(j) && liquidAlpha[j] > 0f && j != waterStyle) {
  				DrawLiquid(isBackground, j, isBackground ? 1f : liquidAlpha[j], drawSinglePassLiquids: false);
  				flag = true;
-@@ -47314,7 +_,7 @@
+@@ -47312,9 +_,12 @@
+ 		}
+ 
  		DrawLiquid(isBackground, waterStyle, flag ? liquidAlpha[waterStyle] : 1f);
++
++		if (LiquidEdgeRenderer.Active && !drawToScreen)
++			LiquidEdgeRenderer.DrawTileMask(spriteBatch, tileTarget, sceneTilePos - screenPosition + new Vector2(drawToScreen ? 0 : offScreenRange));
  	}
  
 -	protected void DrawLiquid(bool bg = false, int waterStyle = 0, float Alpha = 1f, bool drawSinglePassLiquids = true)
@@ -6494,6 +6499,45 @@
  	{
  		if (!Lighting.NotRetro) {
  			oldDrawWater(bg, waterStyle, Alpha);
+@@ -47324,7 +_,8 @@
+ 		Stopwatch stopwatch = new Stopwatch();
+ 		stopwatch.Start();
+ 		Vector2 drawOffset = (drawToScreen ? Vector2.Zero : new Vector2(offScreenRange, offScreenRange)) - screenPosition;
+-		if (bg)
++
++		if (bg && !LiquidEdgeRenderer.Active)
+ 			TilesRenderer.DrawLiquidBehindTiles(waterStyle);
+ 
+ 		LiquidRenderer.Instance.DrawNormalLiquids(spriteBatch, drawOffset, waterStyle, Alpha, bg);
+@@ -47776,6 +_,7 @@
+ 			}
+ 		}
+ 
++		bool liquidSlopeFix = LiquidEdgeRenderer.Active;
+ 		bool flag = ShouldShowInvisibleWalls();
+ 		for (int i = num5; i < num6; i++) {
+ 			bool flag2 = i >= UnderworldLayer;
+@@ -47794,6 +_,12 @@
+ 					Tile tile = Main.tile[j, i];
+ 					float num8 = Lighting.Brightness(j, i);
+ 					num8 = (float)Math.Floor(num8 * 255f) / 255f;
++
++
++					// TML(liquid-slopes): Avoid drawing over liquid edges.
++					if (liquidSlopeFix && LiquidRenderer.Instance.HasFullWater(j, i) && ((tile.Slope != SlopeType.Solid || tile.IsHalfBlock) && num8 >= (5f / 255f) || num8 > (5f / 255f)))
++						break;
++
+ 					byte b = tile.liquid;
+ 					bool num9 = num8 <= num2 && ((!flag2 && b < 250) || WorldGen.SolidTile(tile) || (b >= 200 && num8 == 0f));
+ 					bool flag3 = tile.active() && tileBlockLight[tile.type] && (!tile.invisibleBlock() || flag);
+@@ -48019,6 +_,7 @@
+ 				backgroundTarget = new RenderTarget2D(base.GraphicsDevice, width, height, mipMap: false, base.GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.None);
+ 				screenTarget = new RenderTarget2D(base.GraphicsDevice, base.GraphicsDevice.PresentationParameters.BackBufferWidth, base.GraphicsDevice.PresentationParameters.BackBufferHeight, mipMap: false, base.GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.None);
+ 				screenTargetSwap = new RenderTarget2D(base.GraphicsDevice, base.GraphicsDevice.PresentationParameters.BackBufferWidth, base.GraphicsDevice.PresentationParameters.BackBufferHeight, mipMap: false, base.GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.None);
++
+ 				if (Main.OnRenderTargetsInitialized != null)
+ 					Main.OnRenderTargetsInitialized(base.GraphicsDevice.PresentationParameters.BackBufferWidth, base.GraphicsDevice.PresentationParameters.BackBufferHeight);
+ 			}
 @@ -48744,18 +_,33 @@
  		}
  	}
