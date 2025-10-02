@@ -623,7 +623,7 @@ public static class SteamedWraps
 
 			// Due to issues with Steam moving files from downloading folder to installed folder,
 			// there can be some latency in detecting it's installed. - Solxan
-			while (_downloadCallback == EResult.k_EResultNone) {
+			/*while (_downloadCallback == EResult.k_EResultNone) {
 				Thread.Sleep(100);
 				RunCallbacks();
 			}
@@ -632,7 +632,9 @@ public static class SteamedWraps
 				//TODO: does this happen often? Never seen before at this stage in flow - Solxan
 				ReportCheckSteamLogs();
 				Logging.tML.Error($"Mod with ID {publishId} failed to install with Steam Error Result {_downloadCallback}");
-			}
+			}*/
+
+			Thread.Sleep(10000); // Temp unstable Workaround until https://discord.com/channels/103110554649894912/445276626352209920/1423100667211284523 is fixed
 		}
 	}
 
