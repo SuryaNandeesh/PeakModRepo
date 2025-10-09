@@ -5046,6 +5046,20 @@
  					_npcIndexWhoHoldsHeadIndex[headIndexSafe] = j;
  					_npcTypesThatAlreadyDrewAHead.Add(npc[j].type);
  				}
+@@ -34040,10 +_,11 @@
+ 				}
+ 			}
+ 
++			if (num <= 98) // GamePointID 700+ are for crafting. This check avoids an exception, but does not support gamepad navigation past 98 TownNPC. That would require too many patches. #4790
+-			UILinkPointNavigator.SetPosition(600 + num, new Vector2(num7, num8) + TextureAssets.InventoryBack.Value.Size() * 0.75f);
++				UILinkPointNavigator.SetPosition(600 + num, new Vector2(num7, num8) + TextureAssets.InventoryBack.Value.Size() * 0.75f);
+ 			Texture2D value = TextureAssets.InventoryBack11.Value;
+ 			Microsoft.Xna.Framework.Color white = inventoryBack;
+-			if (UILinkPointNavigator.CurrentPoint - 600 == num) {
++			if (num <= 98 && UILinkPointNavigator.CurrentPoint - 600 == num) {
+ 				value = TextureAssets.InventoryBack14.Value;
+ 				white = Microsoft.Xna.Framework.Color.White;
+ 			}
 @@ -34097,7 +_,7 @@
  		else {
  			text = Lang.inter[21].Value + " " + guideItem.Name;
