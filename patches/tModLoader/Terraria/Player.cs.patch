@@ -480,17 +480,17 @@
  	public HitTile hitReplace;
  	public int jump;
 +	/// <summary>
-+	/// The visible head equipment slot. Usually corresponds to the <see cref="Item.legSlot"/> of the visible head ("helmet") armor or vanity item.
++	/// The visible head equipment slot (<see cref="ArmorIDs.Head"/>). Usually corresponds to the <see cref="Item.headSlot"/> of the visible head ("helmet") armor or vanity item.
 +	/// <br/><br/> Defaults to -1.
 +	/// </summary>
  	public int head = -1;
 +	/// <summary>
-+	/// The visible body equipment slot. Usually corresponds to the <see cref="Item.bodySlot"/> of the visible body ("shirt") armor or vanity item.
++	/// The visible body equipment slot (<see cref="ArmorIDs.Body"/>). Usually corresponds to the <see cref="Item.bodySlot"/> of the visible body ("shirt") armor or vanity item.
 +	/// <br/><br/> Defaults to -1.
 +	/// </summary>
  	public int body = -1;
 +	/// <summary>
-+	/// The visible legs equipment slot. Usually corresponds to the <see cref="Item.legSlot"/> of the visible legs ("pants") armor or vanity item.
++	/// The visible legs equipment slot (<see cref="ArmorIDs.Legs"/>). Usually corresponds to the <see cref="Item.legSlot"/> of the visible legs ("pants") armor or vanity item.
 +	/// <br/><br/> Defaults to -1.
 +	/// </summary>
  	public int legs = -1;

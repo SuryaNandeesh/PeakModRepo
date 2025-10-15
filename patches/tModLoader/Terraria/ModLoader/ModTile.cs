@@ -499,14 +499,14 @@ public abstract class ModTile : ModBlockType
 	/// </summary>
 	/// <param name="i">The x position in tile coordinates.</param>
 	/// <param name="j">The y position in tile coordinates.</param>
-	/// <param name="up">The merge type of the tile above. Unitializaed if the tile is <see cref="Main.tileFrameImportant"/>.</param>
-	/// <param name="down">The merge type of the tile below. Unitializaed if the tile is <see cref="Main.tileFrameImportant"/>.</param>
-	/// <param name="left">The merge type of the tile to the left. Unitializaed if the tile is <see cref="Main.tileFrameImportant"/>.</param>
-	/// <param name="right">The merge type of the tile to the right. Unitializaed if the tile is <see cref="Main.tileFrameImportant"/>.</param>
-	/// <param name="upLeft">The merge type of the tile on the top left. Unitializaed if the tile is <see cref="Main.tileFrameImportant"/>.</param>
-	/// <param name="upRight">The merge type of the tile on the top right. Unitializaed if the tile is <see cref="Main.tileFrameImportant"/>.</param>
-	/// <param name="downLeft">The merge type of the tile on the bottom left. Unitializaed if the tile is <see cref="Main.tileFrameImportant"/>.</param>
-	/// <param name="downRight">The merge type of the tile on the bottom right. Unitializaed if the tile is <see cref="Main.tileFrameImportant"/>.</param>
+	/// <param name="up">The merge type of the tile above. Uninitialized if the tile is <see cref="Main.tileFrameImportant"/>.</param>
+	/// <param name="down">The merge type of the tile below. Uninitialized if the tile is <see cref="Main.tileFrameImportant"/>.</param>
+	/// <param name="left">The merge type of the tile to the left. Uninitialized if the tile is <see cref="Main.tileFrameImportant"/>.</param>
+	/// <param name="right">The merge type of the tile to the right. Uninitialized if the tile is <see cref="Main.tileFrameImportant"/>.</param>
+	/// <param name="upLeft">The merge type of the tile on the top left. Uninitialized if the tile is <see cref="Main.tileFrameImportant"/>.</param>
+	/// <param name="upRight">The merge type of the tile on the top right. Uninitialized if the tile is <see cref="Main.tileFrameImportant"/>.</param>
+	/// <param name="downLeft">The merge type of the tile on the bottom left. Uninitialized if the tile is <see cref="Main.tileFrameImportant"/>.</param>
+	/// <param name="downRight">The merge type of the tile on the bottom right. Uninitialized if the tile is <see cref="Main.tileFrameImportant"/>.</param>
 	public virtual void PostTileFrame(int i, int j, int up, int down, int left, int right, int upLeft, int upRight, int downLeft, int downRight)
 	{
 	}

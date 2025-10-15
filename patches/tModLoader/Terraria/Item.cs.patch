@@ -481,19 +481,19 @@
 +	/// </summary>
  	public int defense;
 +	/// <summary>
-+	/// The head equipment slot for this item. When this item is equipped, <see cref="Player.head"/> will be set to this value and the corresponding equipment texture will be displayed on the player.
++	/// The head equipment slot for this item (<see cref="ArmorIDs.Head"/>). When this item is equipped, <see cref="Player.head"/> will be set to this value and the corresponding equipment texture will be displayed on the player.
 +	/// <br/><br/> For <see cref="ModItem"/>, this is set automatically using <see cref="AutoloadEquip"/> with <see cref="EquipType.Head"/>.
 +	/// <br/><br/> Defaults to -1.
 +	/// </summary>
  	public int headSlot = -1;
 +	/// <summary>
-+	/// The body equipment slot for this item. When this item is equipped, <see cref="Player.body"/> will be set to this value and the corresponding equipment texture will be displayed on the player.
++	/// The body equipment slot for this item (<see cref="ArmorIDs.Body"/>). When this item is equipped, <see cref="Player.body"/> will be set to this value and the corresponding equipment texture will be displayed on the player.
 +	/// <br/><br/> For <see cref="ModItem"/>, this is set automatically using <see cref="AutoloadEquip"/> with <see cref="EquipType.Body"/>.
 +	/// <br/><br/> Defaults to -1.
 +	/// </summary>
  	public int bodySlot = -1;
 +	/// <summary>
-+	/// The legs equipment slot for this item. When this item is equipped, <see cref="Player.legs"/> will be set to this value and the corresponding equipment texture will be displayed on the player.
++	/// The legs equipment slot for this item (<see cref="ArmorIDs.Legs"/>). When this item is equipped, <see cref="Player.legs"/> will be set to this value and the corresponding equipment texture will be displayed on the player.
 +	/// <br/><br/> For <see cref="ModItem"/>, this is set automatically using <see cref="AutoloadEquip"/> with <see cref="EquipType.Legs"/>.
 +	/// <br/><br/> Defaults to -1.
 +	/// </summary>
@@ -508,7 +508,7 @@
  	public sbyte beardSlot = -1;
 +	*/
 +	/// <summary>
-+	/// The equipment slot for this item. When this item is equipped, the corresponding <see cref="Player"/> field will be set to this value (for example, item.faceSlot will set player.face) and the corresponding equipment texture will be displayed on the player.
++	/// The equipment slot for this item (See the entry in <see cref="ArmorIDs"/> for this EquipType). When this item is equipped, the corresponding <see cref="Player"/> field will be set to this value (for example, item.faceSlot will set player.face) and the corresponding equipment texture will be displayed on the player.
 +	/// <br/><br/> For <see cref="ModItem"/>, this is set automatically using <see cref="AutoloadEquip"/> with the corresponding <see cref="EquipType"/> value.
 +	/// <br/><br/> Defaults to -1, indicating that this item does not have a specific equipment texture for this slot.
 +	/// </summary>
