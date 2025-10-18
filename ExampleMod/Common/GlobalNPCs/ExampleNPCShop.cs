@@ -30,7 +30,7 @@ namespace ExampleMod.Common.GlobalNPCs
 				// This shop entry sells for 3 of a custom currency added in our mod.
 				shop.Add(new Item(ModContent.ItemType<ExampleMountItem>()) {
 					shopCustomPrice = 2,
-					shopSpecialCurrency = ExampleCustomCurrency.CurrencyId,
+					shopSpecialCurrency = ExampleCustomCurrencies.ExampleItemCurrency,
 				});
 			}
 			else if (shop.NpcType == NPCID.Wizard) {
