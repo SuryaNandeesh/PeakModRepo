@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria.DataStructures;
 using Terraria.GameInput;
+using Terraria.Graphics;
 using Terraria.ID;
 using Terraria.ModLoader.Core;
 using Terraria.ModLoader.IO;
@@ -1133,11 +1134,19 @@ public abstract class ModPlayer : ModType<Player, ModPlayer>, IIndexed
 	}
 
 	/// <summary>
-	/// Allows you to modify the drawing parameters of the player before drawing begins.
+	/// Allows you to modify the drawing parameters of the player before drawing begins (before every <see cref="PlayerDrawLayer"/> runs).
 	/// <para/> Called on local and remote clients.
 	/// </summary>
 	/// <param name="drawInfo"></param>
 	public virtual void ModifyDrawInfo(ref PlayerDrawSet drawInfo)
+	{
+	}
+
+	/// <summary>
+	/// Allows modifying player draw data after all <see cref="PlayerDrawLayer"/> have run (and added <see cref="PlayerDrawSet.DrawDataCache"/> entries) and immediately before the <see cref="PlayerDrawSet.DrawDataCache"/> entries are actually drawn.
+	/// <br/><br/> This can be used to modify all <see cref="PlayerDrawSet.DrawDataCache"/> entries, such as modifying the draw color of each entry. Vanilla uses this to apply the scale parameter of <see cref="Graphics.Renderers.IPlayerRenderer.DrawPlayer"/> and to customize how the First Fractal clones are rendered (unobtainable weapon).
+	/// </summary>
+	public virtual void TransformDrawData(ref PlayerDrawSet drawInfo)
 	{
 	}
 
@@ -1415,6 +1424,14 @@ public abstract class ModPlayer : ModType<Player, ModPlayer>, IIndexed
 	/// <param name="oldLoadoutIndex">The old loadout index.</param>
 	/// <param name="loadoutIndex">The new loadout index.</param>
 	public virtual void OnEquipmentLoadoutSwitched(int oldLoadoutIndex, int loadoutIndex)
+	{
+	}
+
+	/// <summary>
+	/// Allows drawing additional copies of the player, usually to implement an armor set shadow visual effect, dodge effect, or dash effect. Use <c>Main.PlayerRenderer.DrawPlayer(...)</c> to draw the additional player copies. The normal player will be drawn after this method runs.
+	/// <br/><br/> Called during <see cref="Terraria.Graphics.Renderers.LegacyPlayerRenderer.DrawPlayerFull(Graphics.Camera, Player)"/>. 
+	/// </summary>
+	public virtual void DrawPlayer(Camera camera)
 	{
 	}
 }
