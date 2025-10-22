@@ -3564,6 +3564,17 @@
  										TileFrame(i - 1, j);
  										if (mergeRight)
  											left = num;
+@@ -60560,7 +_,10 @@
+ 										if (mergeLeft)
+ 											right = num;
+ 									}
++									/*
+ 									else if (right == 147) {
++									*/
++									else if (right >= 0 && TileID.Sets.Snow[right]) {
+ 										TileFrame(i + 1, j);
+ 										if (mergeLeft)
+ 											right = num;
 @@ -60679,9 +_,12 @@
  								}
  								else {
