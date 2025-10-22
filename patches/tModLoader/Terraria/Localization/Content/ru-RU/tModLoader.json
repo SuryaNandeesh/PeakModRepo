@@ -26,6 +26,8 @@
 		"ShowRemovedModsInfoMessageUpdatedMods": "\nМоды, удалённые с момента последнего запуска. Если какой-либо из них был удалён по ошибке, нажмите «Загрузить зависимости», чтобы появилась возможность повторно загрузить мод.",
 		"DependenciesNeededForOtherMods": "\nОтсутствуют некоторые зависимости:",
 		"InstallDependencies": "Установить зависимости",
+		// "RedownloadMods": "Redownload Mods",
+		// "InstallDependenciesAndRedownloadMods": "Install Dependencies and Redownload Mods",
 		"ContinueAnyway": "Продолжить в любом случае",
 		"ModUpdatedSinceLastLaunchMessage": "Этот мод автоматически обновился с прошлого запуска с версии {0}",
 		"ModAddedSinceLastLaunchMessage": "Этот мод добавился с прошлого запуска",
