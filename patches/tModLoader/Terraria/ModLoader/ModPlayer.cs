@@ -154,7 +154,7 @@ public abstract class ModPlayer : ModType<Player, ModPlayer>, IIndexed
 	/// <summary>
 	/// Allows you to copy information to the <paramref name="targetCopy"/> parameter that you intend to sync between this local client and both the server and other clients. 
 	/// <br/><br/> You would then use the <see cref="SendClientChanges"/> hook to compare against that data and decide what needs synchronizing, sending that data in a <see cref="ModPacket"/> to the server. The server will then need to relay that information to the other remote clients. 
-	/// <br/><br/> This hook is called with every call of the <see cref="Player.clientClone"/> method.
+	/// <br/><br/> This hook is called with every call of the <see cref="Player.clientClone"/> method (each game update).
 	/// <br/><br/> See <see href="https://github.com/tModLoader/tModLoader/wiki/Basic-Netcode#player--modplayer">the Player / ModPlayer section of the Basic Netcode wiki page</see> for more information.
 	/// <br/>
 	/// <br/> <b>NOTE:</b> For performance reasons, avoid deep cloning or copying any excessive information.
@@ -166,8 +166,11 @@ public abstract class ModPlayer : ModType<Player, ModPlayer>, IIndexed
 	}
 
 	/// <summary>
-	/// Allows you to sync information about this player between server and client. The toWho and fromWho parameters correspond to the remoteClient/toClient and ignoreClient arguments, respectively, of NetMessage.SendData/ModPacket.Send. They should be passed in as-is. The newPlayer parameter is whether or not the player is joining the server (it is true on the joining client).
+	/// Allows you to sync information about this player between server and client. This hook will be called whenever a player joins the game, both to sync the joining player's data to the server and other clients and to sync the data of the existing players to the joining player.
+	/// <br/><br/> This should be used to sync all necessary modded data from this ModPlayer to other clients. The <see cref="SendClientChanges(ModPlayer)"/> hook is used to selectively sync changes that happen during gameplay.
+	/// <br/><br/> The toWho and fromWho parameters correspond to the remoteClient/toClient and ignoreClient arguments, respectively, of NetMessage.SendData/ModPacket.Send. They should be passed in as-is. The newPlayer parameter is whether or not the player is joining the server (it is true on the joining client).
 	/// <br/><br/> This hook will be called on the local client to send the data to the server and also on the server to send the data to other clients.
+	/// <br/><br/> See <see href="https://github.com/tModLoader/tModLoader/wiki/Basic-Netcode#player--modplayer">the Player / ModPlayer section of the Basic Netcode wiki page</see> for more information.
 	/// </summary>
 	/// <param name="toWho"></param>
 	/// <param name="fromWho"></param>
@@ -177,8 +180,8 @@ public abstract class ModPlayer : ModType<Player, ModPlayer>, IIndexed
 	}
 
 	/// <summary>
-	/// Allows you to sync any information that has changed for this ModPlayer from this local client to the server. The server will need to take those changes and relay them to other remote clients.
-	/// <br/><br/> Here, you should check the information you have copied in the clientClone parameter; if they differ between this ModPlayer and the clientPlayer parameter, then you should send that information using NetMessage.SendData or ModPacket.Send. All of the differences are the changes that occurred during the last game update for the local player.
+	/// Allows you to sync any information that has changed for this ModPlayer since the last game update from this local client to the server. The server will need to take those changes and relay them to other remote clients.
+	/// <br/><br/> Here, you should check the information you have copied in the clientClone parameter during <see cref="CopyClientState(ModPlayer)"/>; if they differ between this ModPlayer and the clientPlayer parameter, then you should send that information using NetMessage.SendData or ModPacket.Send. All of the differences are the changes that occurred during the last game update for the local player.
 	/// <br/><br/> See <see href="https://github.com/tModLoader/tModLoader/wiki/Basic-Netcode#player--modplayer">the Player / ModPlayer section of the Basic Netcode wiki page</see> for more information.
 	/// </summary>
 	/// <param name="clientPlayer"></param>
