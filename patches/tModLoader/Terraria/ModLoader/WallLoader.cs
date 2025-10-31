@@ -569,8 +569,9 @@ public static class WallLoader
 
 	public static void PlaceInWorld(int i, int j, Item item)
 	{
-		int type = item.createWall;
-		if (type < 0)
+		Tile tile = Main.tile[i, j];
+		int type = tile.WallType;
+		if (type == 0)
 			return;
 
 		foreach (var hook in HookPlaceInWorld) {

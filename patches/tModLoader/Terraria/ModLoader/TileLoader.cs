@@ -1408,8 +1408,9 @@ public static class TileLoader
 
 	public static void PlaceInWorld(int i, int j, Item item)
 	{
-		int type = item.createTile;
-		if (type < 0)
+		Tile tile = Main.tile[i, j];
+		int type = tile.TileType;
+		if (!tile.HasTile)
 			return;
 
 		foreach (var hook in HookPlaceInWorld) {
