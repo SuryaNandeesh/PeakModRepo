@@ -247,7 +247,7 @@
  				y = num + 1;
  				break;
  			}
-@@ -593,7 +_,11 @@
+@@ -593,12 +_,16 @@
  		}
  	}
  
@@ -260,6 +260,12 @@
  	{
  		int y = j;
  		for (int k = j; k < Main.maxTilesY; k++) {
+ 			Tile tile = Main.tile[i, k];
+-			if (WorldGen.SolidTile(i, k) || !tile.active()) {
++			if (WorldGen.TopEdgeCanBeAttachedTo(i, k) || !tile.active()) {
+ 				y = k - 1;
+ 				break;
+ 			}
 @@ -629,7 +_,7 @@
  		if (TileID.Sets.HasOutlines[drawData.typeCache])
  			GetTileOutlineInfo(tileX, tileY, drawData.typeCache, ref drawData.tileLight, ref highlightTexture, ref highlightColor);
