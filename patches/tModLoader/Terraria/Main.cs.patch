@@ -5387,6 +5387,18 @@
  
  		PlayerInput.SetZoom_World();
  	}
+@@ -36525,7 +_,11 @@
+ 		if (num > 0) {
+ 			int num3 = 10 + player[myPlayer].cursorItemIconPush;
+ 			instance.LoadItem(num);
++			Vector2 value = Item.GetDrawHitbox(num, null).Size() * num2 * 0.5f;
++			ItemSlot.DrawItemIcon(ContentSamples.ItemsByType[num], ItemSlot.Context.InWorld, Main.spriteBatch, new Vector2(Main.mouseX + num3, Main.mouseY + num3) + value, num2, 9999f, currentColor);
++			/* Fix item frame drawing not respecting default item.color
+ 			spriteBatch.Draw(TextureAssets.Item[num].Value, new Vector2(mouseX + num3, mouseY + num3), Item.GetDrawHitbox(num, null), currentColor, 0f, default(Vector2), num2, effects, 0f);
++			*/
+ 			if (num == item.type && TryGetAmmo(item, out var ammoItem, out var ammoColor, out var ammoScale, out var ammoOffset)) {
+ 				float scale = num2 * ammoScale;
+ 				int type = ammoItem.type;
 @@ -36758,6 +_,9 @@
  
  	private void DrawInterface_33_MouseText()
