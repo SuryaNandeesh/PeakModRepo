@@ -55,6 +55,7 @@ public class BadIDTypeUnitTest
 
 			var recipe = Recipe.Create(ItemID.CobaltBrickWall);
 			recipe.AddIngredient({|BadIDType:TileID.Dirt|});
+			recipe.AddRecipeGroup({|BadIDType:ItemID.Wood|});
 			"""
 			);
 	}
