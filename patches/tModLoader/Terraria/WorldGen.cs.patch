@@ -794,7 +794,7 @@
  		for (int num = -1; num > -100; num--) {
  			Tile tile = Main.tile[x, y + num];
  			if (!tile.active() || !TileID.Sets.GetsCheckedForLeaves[tile.type])
-@@ -17655,14 +_,18 @@
+@@ -17655,14 +_,19 @@
  						case 17:
  							passStyle = num2 + 8;
  							break;
@@ -809,6 +809,7 @@
  			}
  		}
 +
++		// TODO: Need treeHeight parameter to support spawning leaves from really tall tree tops.
 +		PlantLoader.GetTreeLeaf(t.type, ref passStyle);
  	}
  
@@ -2636,7 +2637,7 @@
  	private static bool ReplaceTile_IsValidChest(int type) => TileID.Sets.BasicChest[type];
  	private static bool ReplaceTile_IsValidDresser(int type) => TileID.Sets.BasicDresser[type];
  	private static bool ReplaceTile_IsValidPlatform(int type) => TileID.Sets.Platforms[type];
-@@ -44973,14 +_,26 @@
+@@ -44973,14 +_,27 @@
  					else if (i % 3 == 1) {
  						treeFrame += 3;
  					}
@@ -2650,6 +2651,7 @@
 +				default:
 +					var tree = PlantLoader.Get<ModTree>(TileID.Trees, tile.type);
 +					if (tree != null) {
++						tree.SetTreeFoliageSettings(i, j, tile, xoffset, ref treeFrame, floorY, ref topTextureFrameWidth, ref topTextureFrameHeight);
 +						tree.SetTreeFoliageSettings(tile, ref xoffset, ref treeFrame, ref floorY, ref topTextureFrameWidth, ref topTextureFrameHeight);
 +						treeStyle = tile.type + ModTree.VanillaTopTextureCount;
 +						return true;
