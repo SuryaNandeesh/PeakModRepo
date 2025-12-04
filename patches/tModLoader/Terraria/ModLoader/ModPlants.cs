@@ -247,10 +247,14 @@ public abstract class ModTree : ITree
 	/// <br/><br/> <paramref name="topTextureFrameWidth"/> and <paramref name="topTextureFrameHeight"/> dictate the size of the sprite for the tree top. The tree top will be drawn centered above the top tile of the tree. These default to 80 and should be consistent between each tree top option. Branches are 40x40 and are not customizable.
 	/// <br/><br/> <paramref name="xoffset"/> will be 0 for tree tops, 1 for a left branch, and -1 for a right branch. Can be combined with <paramref name="i"/> and <paramref name="floorY"/> to calculate the coordinates of the tile this tree is grown on.
 	/// </summary>
-	public abstract void SetTreeFoliageSettings(int i, int j, Tile tile, int xoffset, ref int treeFrame, int floorY, ref int topTextureFrameWidth, ref int topTextureFrameHeight);
+	public virtual void SetTreeFoliageSettings(int i, int j, Tile tile, int xoffset, ref int treeFrame, int floorY, ref int topTextureFrameWidth, ref int topTextureFrameHeight)
+	{
+	}
 
 	[Obsolete("Use the updated hook signature")]
-	public abstract void SetTreeFoliageSettings(Tile tile, ref int xoffset, ref int treeFrame, ref int floorY, ref int topTextureFrameWidth, ref int topTextureFrameHeight);
+	public virtual void SetTreeFoliageSettings(Tile tile, ref int xoffset, ref int treeFrame, ref int floorY, ref int topTextureFrameWidth, ref int topTextureFrameHeight)
+	{
+	}
 
 	/// <summary>
 	/// Return the texture containing the possible tree tops that can be drawn above this tree.
