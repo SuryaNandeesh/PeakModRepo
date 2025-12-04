@@ -17,7 +17,7 @@ namespace ExampleMod.Content.Items.Placeable
 	// - Gem locks and Large Gem item
 	// - Gemstone cave worldgen support
 	// - Extractinator output support
-	// - Other content (Gem critters, torches, staff, hook, phasesaber/blade, robe, gemspark block, stained glass)
+	// - Other content (Gem critters, torches, staff, hook, phasesaber/blade, robe (see Player.hasGemRobe), gemspark block, stained glass)
 	public class ExampleGem : ModItem
 	{
 		public override void SetDefaults() {
