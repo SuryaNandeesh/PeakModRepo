@@ -1,0 +1,12 @@
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\bin\Debug\net8.0\Mimic.deps.json
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\bin\Debug\net8.0\Mimic.dll
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\bin\Debug\net8.0\Mimic.pdb
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\obj\Debug\net8.0\Mimic.csproj.AssemblyReference.cache
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\obj\Debug\net8.0\Mimic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\obj\Debug\net8.0\Mimic.AssemblyInfoInputs.cache
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\obj\Debug\net8.0\Mimic.AssemblyInfo.cs
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\obj\Debug\net8.0\Mimic.csproj.CoreCompileInputs.cache
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\obj\Debug\net8.0\Mimic.dll
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\obj\Debug\net8.0\refint\Mimic.dll
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\obj\Debug\net8.0\Mimic.pdb
+C:\Users\Daikwon Raney\OneDrive - Neumont College of Computer Science\Documents\My Games\Terraria\tModLoader\ModSources\Mimic\obj\Debug\net8.0\ref\Mimic.dll
