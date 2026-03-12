@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\sunar\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TreeSword\\TreeSword.csproj": {}
+    "C:\\Users\\sunar\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TreeSword\\TreeSword.csproj": {}
   },
   "projects": {
-    "c:\\Users\\sunar\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TreeSword\\TreeSword.csproj": {
+    "C:\\Users\\sunar\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TreeSword\\TreeSword.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\sunar\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TreeSword\\TreeSword.csproj",
+        "projectUniqueName": "C:\\Users\\sunar\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TreeSword\\TreeSword.csproj",
         "projectName": "TreeSword",
-        "projectPath": "c:\\Users\\sunar\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TreeSword\\TreeSword.csproj",
+        "projectPath": "C:\\Users\\sunar\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TreeSword\\TreeSword.csproj",
         "packagesPath": "C:\\Users\\sunar\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\sunar\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TreeSword\\obj\\",
+        "outputPath": "C:\\Users\\sunar\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TreeSword\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
