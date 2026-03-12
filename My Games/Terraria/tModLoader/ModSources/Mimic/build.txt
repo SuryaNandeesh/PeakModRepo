@@ -1,3 +1,0 @@
-displayName = Enemy Mimic
-author = Daikwon
-version = 0.1
