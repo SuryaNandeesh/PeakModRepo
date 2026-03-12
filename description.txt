@@ -1,0 +1,24 @@
+Peaking It / TreeSword
+
+This mod currently adds:
+
+- A new town NPC: the Vocal Vendor
+  - Moves in after the world flag "DownedDoppelganger" is set (debug command available for testing).
+  - On each world load, randomly appears as one of four Vocaloid-inspired variants (Miku, Rin, Kaito, Meiko) and keeps that look for the whole session.
+  - Sells mod-exclusive gear, including the Barkblade and Shadow Essence.
+
+- Barkblade
+  - A melee sword that flicks out a slow, spinning leaf projectile on every swing.
+  - Sold by the Vocal Vendor for 15 gold.
+
+- Shadow Essence
+  - A mod-only crafting material intended to drop from a future Doppelganger enemy.
+  - Currently also sold by the Vocal Vendor.
+
+- Doppelganger-themed weapons and projectiles (for future use)
+  - Void Cleaver: a voidy melee sword (NPC-only for now).
+  - Shadow Sling + yoyo projectile: a shadowy yoyo with a faint dark trail.
+  - Null Shot: a small shadow projectile used by the Null Shot Bow and intended for the future Doppelganger.
+  - Null Shot Bow: a ranged weapon that fires Null Shot projectiles instead of arrows.
+
+All custom items and NPCs use placeholder vanilla sprites until custom art is added.

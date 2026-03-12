@@ -1,0 +1,3 @@
+displayName = Tree Sword
+author = ayrus
+version = 0.1

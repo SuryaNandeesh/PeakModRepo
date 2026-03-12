@@ -1,0 +1,54 @@
+Items: {
+	TutorialSword: {
+		DisplayName: Baby's first sword
+		Tooltip: My first sword
+	}
+
+	Barkblade: {
+		DisplayName: Barkblade
+		Tooltip: A sturdy blade that flicks out leaves with every swing.
+	}
+
+	ShadowEssence: {
+		DisplayName: Shadow Essence
+		Tooltip: A residue of a perfect imitation.
+	}
+
+	VoidCleaver: {
+		DisplayName: Void Cleaver
+		Tooltip: A blade cut from the dark between shadows.
+	}
+
+	ShadowSling: {
+		DisplayName: Shadow Sling
+		Tooltip: A yoyo that leaves a faint darkness in its wake.
+	}
+
+	NullShotBow: {
+		DisplayName: Null Shot Bow
+		Tooltip: A bow that fires concentrated shadows instead of arrows.
+	}
+}
+
+NPCs: {
+	VocalVendor: {
+		DisplayName: Vocal Vendor
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+}
+
+Projectiles: {
+	LeafProjectile.DisplayName: Leaf Projectile
+	NullShot.DisplayName: Null Shot
+	ShadowSlingYoyoProjectile.DisplayName: Shadow Sling Yoyo Projectile
+}
