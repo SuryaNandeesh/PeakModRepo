@@ -1,0 +1,148 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|c:\\users\\wbarnes\\documents\\my games\\terraria\\tmodloader\\modsources\\peakpiper\\description_workshop.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|solutionrelative:description_workshop.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|c:\\users\\wbarnes\\documents\\my games\\terraria\\tmodloader\\modsources\\peakpiper\\description.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|solutionrelative:description.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|c:\\users\\wbarnes\\documents\\my games\\terraria\\tmodloader\\modsources\\peakpiper\\content\\projectiles\\mudslingerprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|solutionrelative:content\\projectiles\\mudslingerprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|c:\\users\\wbarnes\\documents\\my games\\terraria\\tmodloader\\modsources\\peakpiper\\content\\items\\mudslinger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|solutionrelative:content\\items\\mudslinger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|c:\\users\\wbarnes\\documents\\my games\\terraria\\tmodloader\\modsources\\peakpiper\\content\\items\\barkblade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|solutionrelative:content\\items\\barkblade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|c:\\users\\wbarnes\\documents\\my games\\terraria\\tmodloader\\modsources\\peakpiper\\peakpiper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{894BD2FB-0ACB-47D6-8EEA-E7C4FD6520A0}|PeakPiper.csproj|solutionrelative:peakpiper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 290,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "description_workshop.txt",
+              "DocumentMoniker": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\description_workshop.txt",
+              "RelativeDocumentMoniker": "description_workshop.txt",
+              "ToolTip": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\description_workshop.txt",
+              "RelativeToolTip": "description_workshop.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-12T22:37:00.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "description.txt",
+              "DocumentMoniker": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\description.txt",
+              "RelativeDocumentMoniker": "description.txt",
+              "ToolTip": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\description.txt",
+              "RelativeToolTip": "description.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-12T22:36:31.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PeakPiper.cs",
+              "DocumentMoniker": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\PeakPiper.cs",
+              "RelativeDocumentMoniker": "PeakPiper.cs",
+              "ToolTip": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\PeakPiper.cs",
+              "RelativeToolTip": "PeakPiper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T21:21:55.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Barkblade.cs",
+              "DocumentMoniker": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\Content\\Items\\Barkblade.cs",
+              "RelativeDocumentMoniker": "Content\\Items\\Barkblade.cs",
+              "ToolTip": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\Content\\Items\\Barkblade.cs",
+              "RelativeToolTip": "Content\\Items\\Barkblade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T21:04:15.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MudSlingerProjectile.cs",
+              "DocumentMoniker": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\Content\\Projectiles\\MudSlingerProjectile.cs",
+              "RelativeDocumentMoniker": "Content\\Projectiles\\MudSlingerProjectile.cs",
+              "ToolTip": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\Content\\Projectiles\\MudSlingerProjectile.cs",
+              "RelativeToolTip": "Content\\Projectiles\\MudSlingerProjectile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T22:02:55.021Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 110,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MudSlinger.cs",
+              "DocumentMoniker": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\Content\\Items\\MudSlinger.cs",
+              "RelativeDocumentMoniker": "Content\\Items\\MudSlinger.cs",
+              "ToolTip": "C:\\Users\\wbarnes\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PeakPiper\\Content\\Items\\MudSlinger.cs",
+              "RelativeToolTip": "Content\\Items\\MudSlinger.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T21:42:12.392Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1363,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

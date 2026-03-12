@@ -1,0 +1,3 @@
+displayName = PeakMod_Piper
+author = Piper
+version = 0.1
