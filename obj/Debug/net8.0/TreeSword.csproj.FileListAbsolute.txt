@@ -10,3 +10,4 @@ c:\Users\sunar\Documents\My Games\Terraria\tModLoader\ModSources\TreeSword\obj\D
 c:\Users\sunar\Documents\My Games\Terraria\tModLoader\ModSources\TreeSword\obj\Debug\net8.0\refint\TreeSword.dll
 c:\Users\sunar\Documents\My Games\Terraria\tModLoader\ModSources\TreeSword\obj\Debug\net8.0\TreeSword.pdb
 c:\Users\sunar\Documents\My Games\Terraria\tModLoader\ModSources\TreeSword\obj\Debug\net8.0\ref\TreeSword.dll
+c:\Users\sunar\Documents\My Games\Terraria\tModLoader\ModSources\TreeSword\obj\Debug\net8.0\TreeSword.sourcelink.json

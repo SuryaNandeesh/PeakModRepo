@@ -9,7 +9,8 @@ using TreeSword.Content.Items.Weapons;
 
 namespace TreeSword.Content.NPCs.VocalVendor
 {
-	[AutoloadHead]
+	// Town NPC for the Vocal Vendor. We don't use [AutoloadHead] because this NPC
+	// currently reuses vanilla textures and does not have its own head icon asset.
 	public class VocalVendor : ModNPC
 	{
 		// We keep variant count centralized so dialogue + texture selection can't drift apart.

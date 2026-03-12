@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TreeSword")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e59122588e08e6ace25ef3ed98292d542eaf5773")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c07898e764f1f121eb7dab13203c93b6d716492d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TreeSword")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TreeSword")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
